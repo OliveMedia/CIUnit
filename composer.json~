@@ -12,10 +12,10 @@
     "require": {
         "phpunit/phpunit": "4.8.*",
         "mustangostang/spyc": "0.5.*"
-   		       },
+   		},
     "autoload": {
-        "psr-4":  {
+        "psr-4": {
 		"AcademyHQ\\CIUnit\\": "src/"
-		           }
-   		        }
+		 }
+   		}
 }
