@@ -11,7 +11,7 @@
  * Extending the default phpUnit Framework_TestCase Class
  * providing eg. fixtures, custom assertions, utilities etc.
  */
-class CIUnit_TestCase extends PHPUnit_Framework_TestCase
+class CIUnit_Selenium_TestCase extends PHPUnit_Extensions_Selenium2TestCase
 {
 	// ------------------------------------------------------------------------
 	
@@ -78,6 +78,7 @@ class CIUnit_TestCase extends PHPUnit_Framework_TestCase
 	protected function setUp()
 	{
 		// Only run if the $tables attribute is set.
+
 		if ( ! empty($this->tables))
 		{
 			$this->dbfixt($this->tables);
@@ -206,7 +207,7 @@ class CIUnit_TestCase extends PHPUnit_Framework_TestCase
 		foreach ( $fixts as $fixt )
 		{
 			$fixt_name = $fixt . '_fixt';
-
+			
 			if (file_exists(TESTSPATH . 'fixtures/' . $fixt . '_fixt.yml')) {
 				$this->$fixt_name = CIUnit::$spyc->loadFile(TESTSPATH . 'fixtures/' . $fixt . '_fixt.yml');
 			}

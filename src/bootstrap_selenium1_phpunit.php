@@ -34,7 +34,9 @@ exit;
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-	define('ENVIRONMENT', 'testing');
+
+	define('ENVIRONMENT', 'selenium_testing');
+
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
@@ -262,6 +264,7 @@ require_once CIUPATH . 'core/CodeIgniter.php';
 
 // Load the CIUnit Framework
 require_once CIUPATH. 'libraries/CIUnit.php';
+require_once CIUPATH. 'libraries/CIUnitSelenium1TestCase.php';
 
 //=== and off we go ===
 $CI =& set_controller('CIU_Controller', CIUPATH . 'core/');
