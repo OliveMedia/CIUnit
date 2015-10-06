@@ -231,15 +231,7 @@ exit;
 	{
 		define('CIUPATH', $ciunit_folder . '/');
 	}
-	else
-	{
-		if ( ! is_dir(APPPATH . 'third_party/' . $ciunit_folder))
-		{
-			exit("Your CIUnit folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
-		}
-		
-		define ('CIUPATH', APPPATH . 'third_party/' . $ciunit_folder);
-	}
+	
 	
 	
 	// The path to the Tests folder
