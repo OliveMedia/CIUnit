@@ -211,26 +211,25 @@ exit;
 		define('APPPATH', realpath(BASEPATH.$application_folder) . '/');
 	}
 	
-	// The path to the "views" folder
-	if (is_dir($view_folder)) 
-	{
-		define ('VIEWPATH', $view_folder .'/');
-	}
-	else 
-	{
-		if ( ! is_dir(APPPATH.'views/'))
-		{
-			exit("Your view folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
-		}
+	// // The path to the "views" folder
+	// if (is_dir($view_folder)) 
+	// {
+	// 	define ('VIEWPATH', $view_folder .'/');
+	// }
+	// else 
+	// {
+	// 	if ( ! is_dir(APPPATH.'views/'))
+	// 	{
+	// 		exit("Your view folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
+	// 	}
 				
-		define ('VIEWPATH', APPPATH.'views/' );	
-	}
+	// 	define ('VIEWPATH', APPPATH.'views/' );	
+	// }
 	
 	// The path to CIUnit
-	if (is_dir($ciunit_folder))
-	{
-		define('CIUPATH', $ciunit_folder . '/');
-	}
+	
+	define('CIUPATH', $ciunit_folder . '/');
+	
 	
 	
 	
