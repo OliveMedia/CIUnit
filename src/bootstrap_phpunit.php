@@ -61,7 +61,7 @@ exit;
  * is that the tests folder is in the same directory path as system.  If
  * it is not, update the paths appropriately.
  */
-	$system_path = dirname(__FILE__) . '/../../../system';
+	$system_path = '../../system';
 
 /*
  *---------------------------------------------------------------
@@ -80,23 +80,7 @@ exit;
  * is that the tests folder is in the same directory as the application
  * folder.  If it is not, update the path accordingly.
  */
-	$application_folder = dirname(__FILE__) . '/../..';
-		
-/*
- *---------------------------------------------------------------
- * VIEW FOLDER NAME
- *---------------------------------------------------------------
- * 
- * If you want to move the view folder out of the application 
- * folder set the path to the folder here. The folder can be renamed
- * and relocated anywhere on your server. If blank, it will default 
- * to the standard location inside your application folder.  If you 
- * do move this, use the full server path to this folder 
- *
- * NO TRAILING SLASH!
- *
- */
-	$view_folder = '';	
+	$application_folder = '../../application';
 
 
 /*
@@ -138,7 +122,7 @@ exit;
  *
  * This is the path to the tests folder.
  */
-	$tests_folder = dirname(__FILE__) . "/../../../tests";
+	$tests_folder = '../../tests';
 
 
 
@@ -211,30 +195,16 @@ exit;
 		define('APPPATH', realpath(BASEPATH.$application_folder) . '/');
 	}
 	
-	// // The path to the "views" folder
-	// if (is_dir($view_folder)) 
-	// {
-	// 	define ('VIEWPATH', $view_folder .'/');
-	// }
-	// else 
-	// {
-	// 	if ( ! is_dir(APPPATH.'views/'))
-	// 	{
-	// 		exit("Your view folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
-	// 	}
-				
-	// 	define ('VIEWPATH', APPPATH.'views/' );	
-	// }
-	
 	// The path to CIUnit
-	
+
 	define('CIUPATH', $ciunit_folder . '/');
 	
 	
 	
-	
 	// The path to the Tests folder
+	
 	define('TESTSPATH', realpath($tests_folder) . '/');
+	//die(TESTSPATH);
 
 /*
  * --------------------------------------------------------------------
@@ -268,4 +238,4 @@ $CI->fixture = new Fixture();
 CIUnit::$fixture =& $CI->fixture;
 
 /* End of file bootstrap_phpunit.php */
-/* Location: ./application/third_party/CIUnit/bootstrap_phpunit.php */
+/* Location: ./rbkoms/olivemedia/ciunit/src/libraries/CIUnitTestCase.php */ll

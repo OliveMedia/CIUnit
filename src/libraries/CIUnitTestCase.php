@@ -207,6 +207,7 @@ class CIUnit_TestCase extends PHPUnit_Framework_TestCase
 		{
 			$fixt_name = $fixt . '_fixt';
 
+
 			if (file_exists(TESTSPATH . 'fixtures/' . $fixt . '_fixt.yml')) {
 				$this->$fixt_name = CIUnit::$spyc->loadFile(TESTSPATH . 'fixtures/' . $fixt . '_fixt.yml');
 			}
@@ -219,4 +220,4 @@ class CIUnit_TestCase extends PHPUnit_Framework_TestCase
 }
 
 /* End of file CIUnitTestCase.php */
-/* Location: ./application/third_party/CIUnit/libraries/CIUnitTestCase.php */
+/* Location: ./olivemedia/ciunit/src/libraries/CIUnitTestCase.php */
