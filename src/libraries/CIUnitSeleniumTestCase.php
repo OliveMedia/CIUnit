@@ -39,6 +39,10 @@ class CIUnit_Selenium_TestCase extends PHPUnit_Extensions_Selenium2TestCase
 	 * @var array
 	 */
 	protected $tables = array();
+
+	protected $fixturepath;
+
+
 	
 	// ------------------------------------------------------------------------
 	
@@ -208,16 +212,17 @@ class CIUnit_Selenium_TestCase extends PHPUnit_Extensions_Selenium2TestCase
 		{
 			$fixt_name = $fixt . '_fixt';
 			
-			if (file_exists(TESTSPATH . 'fixtures/' . $fixt . '_fixt.yml')) {
-				$this->$fixt_name = CIUnit::$spyc->loadFile(TESTSPATH . 'fixtures/' . $fixt . '_fixt.yml');
+			if (file_exists($this->fixturepath . $fixt . '_fixt.yml')) {
+				$this->$fixt_name = CIUnit::$spyc->loadFile($this->fixturepath . $fixt . '_fixt.yml');
 			}
 			else
 			{
-				die('The file '. TESTSPATH . 'fixtures/' . $fixt . '_fixt.yml doesn\'t exist.');
+				die('The file '. $this->fixturepath . $fixt . '_fixt.yml doesn\'t exist.');
 			}
 		}
 	}
 }
+
 
 /* End of file CIUnitTestCase.php */
 /* Location: ./application/third_party/CIUnit/libraries/CIUnitTestCase.php */

@@ -120,7 +120,7 @@ exit;
  * UNIT TESTS FOLDER NAME
  * --------------------------------------------------------------
  *
- * This is the path to the tests folder.
+ * This is the path to the tests folder.//confuse nid to ask dai
  */
 	$tests_folder = '../../tests';
 
@@ -196,9 +196,19 @@ exit;
 	}
 	
 	// The path to CIUnit
-
-	define('CIUPATH', $ciunit_folder . '/');
-	
+	if (is_dir($ciunit_folder))
+	{
+		define('CIUPATH', $ciunit_folder . '/');
+	}
+	else
+	{
+		if ( ! is_dir(APPPATH . 'third_party/' . $ciunit_folder))
+		{
+			exit("Your CIUnit folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
+		}
+		
+		define ('CIUPATH', APPPATH . 'third_party/' . $ciunit_folder);
+	}
 	
 	
 	// The path to the Tests folder
@@ -238,4 +248,4 @@ $CI->fixture = new Fixture();
 CIUnit::$fixture =& $CI->fixture;
 
 /* End of file bootstrap_phpunit.php */
-/* Location: ./rbkoms/olivemedia/ciunit/src/libraries/CIUnitTestCase.php */ll
+/* Location: ./rbkoms/olivemedia/ciunit/src/libraries/CIUnitTestCase.php */
