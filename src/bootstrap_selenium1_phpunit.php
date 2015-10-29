@@ -63,7 +63,7 @@ exit;
  * is that the tests folder is in the same directory path as system.  If
  * it is not, update the paths appropriately.
  */
-	$system_path = dirname(__FILE__) . '/../../../system';
+	$system_path = '../../system';
 
 /*
  *---------------------------------------------------------------
@@ -82,7 +82,7 @@ exit;
  * is that the tests folder is in the same directory as the application
  * folder.  If it is not, update the path accordingly.
  */
-	$application_folder = dirname(__FILE__) . '/../..';
+	$application_folder = '../../application';
 		
 /*
  *---------------------------------------------------------------
@@ -98,7 +98,7 @@ exit;
  * NO TRAILING SLASH!
  *
  */
-	$view_folder = '';	
+	
 
 
 /*
@@ -140,7 +140,7 @@ exit;
  *
  * This is the path to the tests folder.
  */
-	$tests_folder = dirname(__FILE__) . "/../../../tests";
+	$tests_folder = '../../tests';
 
 
 
@@ -229,19 +229,8 @@ exit;
 	}
 	
 	// The path to CIUnit
-	if (is_dir($ciunit_folder))
-	{
+	
 		define('CIUPATH', $ciunit_folder . '/');
-	}
-	else
-	{
-		if ( ! is_dir(APPPATH . 'third_party/' . $ciunit_folder))
-		{
-			exit("Your CIUnit folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
-		}
-		
-		define ('CIUPATH', APPPATH . 'third_party/' . $ciunit_folder);
-	}
 	
 	
 	// The path to the Tests folder
@@ -279,5 +268,5 @@ require_once(CIUPATH . 'libraries/Fixture.php');
 $CI->fixture = new Fixture();
 CIUnit::$fixture =& $CI->fixture;
 
-/* End of file bootstrap_phpunit.php */
-/* Location: ./application/third_party/CIUnit/bootstrap_phpunit.php */
+/* End of file bootstrap_selenium1_phpunit.php */
+/* Location: .olivemedia/CIUnit/src/bootstrap_phpunit.php */

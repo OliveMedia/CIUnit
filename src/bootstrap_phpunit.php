@@ -196,26 +196,14 @@ exit;
 	}
 	
 	// The path to CIUnit
-	if (is_dir($ciunit_folder))
-	{
+	
 		define('CIUPATH', $ciunit_folder . '/');
-	}
-	else
-	{
-		if ( ! is_dir(APPPATH . 'third_party/' . $ciunit_folder))
-		{
-			exit("Your CIUnit folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
-		}
-		
-		define ('CIUPATH', APPPATH . 'third_party/' . $ciunit_folder);
-	}
 	
 	
 	// The path to the Tests folder
 	
 	define('TESTSPATH', realpath($tests_folder) . '/');
-	//die(TESTSPATH);
-
+	
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
@@ -248,4 +236,4 @@ $CI->fixture = new Fixture();
 CIUnit::$fixture =& $CI->fixture;
 
 /* End of file bootstrap_phpunit.php */
-/* Location: ./rbkoms/olivemedia/ciunit/src/libraries/CIUnitTestCase.php */
+/* Location: ./vendor/olivemedia/ciunit/src/libraries/CIUnitTestCase.php */
